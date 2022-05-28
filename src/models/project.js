@@ -1,5 +1,5 @@
 const Project = (sequelize, DataTypes) => {
-  const project = sequelize.define({
+  const project = sequelize.define('Project', {
     name: DataTypes.STRING,
     link: DataTypes.STRING,
     module: DataTypes.STRING,

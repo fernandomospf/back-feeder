@@ -5,4 +5,6 @@ const create = async ({username, token}) => {
   return request;
 }
 
-module.exports = create;
+module.exports = {
+  create
+};
