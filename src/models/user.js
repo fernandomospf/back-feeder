@@ -1,7 +1,7 @@
 const User = (sequelize, DataTypes) => {
   const user = sequelize.define('User', {
     username: DataTypes.STRING,
-    password: DataTypes.STRING
+    token: DataTypes.STRING
   }, {
     timestamps: false
   });

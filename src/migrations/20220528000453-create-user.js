@@ -12,7 +12,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      password: {
+      token: {
         allowNull: false,
         type: Sequelize.STRING
       },
