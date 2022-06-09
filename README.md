@@ -37,21 +37,30 @@
 <details>
 <summary><strong>Desenvolvedores</strong></summary>
 <ul>
-    <li>
+    <div>
+        <img 
+        width="80" height="80"
+        src="https://avatars.githubusercontent.com/u/88565122?v=4"/>
         <strong>Eduardo Tatsuo Miyazaki</strong>
         <div>
             <a href="https://github.com/edtmi"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a><br>
             <a href="https://www.linkedin.com/in/eduardo-tatsuo-miyazaki/">  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
         </div>
-    </li>
-    <li>
+    </div>
+    <div>
+    <img 
+        width="80" height="80"
+        src="https://avatars.githubusercontent.com/u/60073911?v=4"/>
         <strong>Fernando Mós</strong>
           <div>
             <a href="https://github.com/FernandoMos92"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a><br>
             <a href="https://www.linkedin.com/in/fernando-mos/">  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
         </div>
-    </li>
-    <li>
+    </div>
+    <div>
+        <img 
+        width="80" height="80"
+        src="https://avatars.githubusercontent.com/u/88989762?v=4"/>
         <strong>Pedro Lima</strong>
           <div>
             <a href="https://github.com/PedroPDIN"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a><br>
@@ -59,7 +68,7 @@
             <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
                 </a>
         </div>
-    </li>
+    </div>
    </ul>
 </details><br><br>
    
