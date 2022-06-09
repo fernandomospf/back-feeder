@@ -2,8 +2,38 @@
 
 <article>
     <h3>Objetivo</h3>
-    
+
+
+
+
+
+
+
 </article>
+    <p>Desenvolvedores</p>
+   <ul>
+    <li>
+        Eduardo Tatsuo Miyazaki
+        <div>
+            <a href="https://github.com/edtmi">GitHub</a><br>
+            <a href="https://www.linkedin.com/in/eduardo-tatsuo-miyazaki/">LinkdIn</a>
+        </div>
+    </li>
+    <li>
+        Fernando Mós
+          <div>
+            <a href="https://github.com/FernandoMos92">GitHub</a><br>
+            <a href="https://www.linkedin.com/in/fernando-mos/">LinkdIn</a>
+        </div>
+    </li>
+    <li>
+        Pedro Lima
+          <div>
+            <a href="https://github.com/PedroPDIN">GitHub</a><br>
+            <a href="https://www.linkedin.com/in/in-pedrolima/">LinkdIn</a>
+        </div>
+    </li>
+   </ul>
 
 <details>
     <summary><strong>1. Cadastrar usuário</strong></summary>
