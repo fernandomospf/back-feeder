@@ -2,10 +2,10 @@
   "name": "back-feeder",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/api/server.js",
   "scripts": {
     "db:reset": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
-    "debug": "nodemon api/server.js"
+    "debug": "nodemon ."
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/FernandoMos92/back-feeder#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
