@@ -29,4 +29,6 @@ UserModel.init(
   underscore: true,
 });
 
-return UserModel;
+module.exports = {
+  UserModel,
+}
