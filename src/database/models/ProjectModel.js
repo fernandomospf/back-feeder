@@ -1,5 +1,6 @@
-const { Model, DataTypes } = require("sequelize/types");
-const { UserModel } = require("./UserModel");
+const { sequelize } = require('.'); 
+const { Model, DataTypes } = require('sequelize');;
+const { UserModel } = require('./UserModel');
 
 class ProjectModel extends Model { }
 
@@ -35,15 +36,17 @@ ProjectModel.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-  }, {
-  modelName: 'projects',
-  sequelize,
-  timestamps: false,
-  underscored: true,
-});
+  },
+  {
+    modelName: 'projects',
+    sequelize,
+    timestamps: false,
+    underscored: true,
+  }
+);
 
-ProjectModel.belongsTo(UserModel, { foreignKey:"a", as:"projects" })
-UserModel.hasMany(ProjectModel, { foreignKey:"a", as:"projects" })
+ProjectModel.belongsTo(UserModel, { foreignKey:'a', as:'projects' })
+UserModel.hasMany(ProjectModel, { foreignKey:'a', as:'projects' })
 
 module.exports = {
   ProjectModel,
