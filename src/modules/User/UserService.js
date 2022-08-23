@@ -17,7 +17,7 @@ class UserService {
       throw new CustomError(404, 'User not found');
     }
 
-    const { id, name, email, password } = userFound;
+    const { id, name, email } = userFound;
 
     const userToken = token.generate({ userId: id, userEmail: email });
 
@@ -25,7 +25,6 @@ class UserService {
       id,
       name,
       email,
-      password,
       token: userToken,
     }
 
