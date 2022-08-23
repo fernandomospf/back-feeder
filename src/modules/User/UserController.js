@@ -10,7 +10,7 @@ class UserController {
     
     const loginResponse = await this.userService.loginUser(userInformations);
 
-    return res.status(201).json(loginResponse); 
+    return res.status(200).json(loginResponse); 
   }
 }
 
