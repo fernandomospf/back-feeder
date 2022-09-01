@@ -1,4 +1,5 @@
-const { Model, DataTypes } = require("sequelize/types");
+const { sequelize } = require('.'); 
+const { Model, DataTypes } = require('sequelize');  
 
 class UserModel extends Model {}
 
@@ -22,12 +23,14 @@ UserModel.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-  }, {
-  modelName: 'users',
-  sequelize,
-  timestamps: false,
-  underscore: true,
-});
+  }, 
+  {
+    modelName: 'users',
+    sequelize,
+    timestamps: false,
+    underscore: true,
+  }
+);
 
 module.exports = {
   UserModel,
