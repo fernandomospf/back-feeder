@@ -1,5 +1,6 @@
 'use strict';
-const { Model } = require('sequelize');
+const { sequelize } = require('.');
+const { Model, DataTypes } = require('sequelize');
 const { ProjectModel } = require('./ProjectModel');
 const { StackModel } = require('./StackModel');
 
@@ -27,13 +28,14 @@ StackProjectModel.init(
       },
     },
     {
-      modelName: 'stacksProjects',
+      modelName: 'stacks_projects',
+      tableName: 'stacksProjects',
       sequelize,
       timestamps: false,
       underscored: true,
     }
   );
-
+    
 module.exports = {
   StackProjectModel,
 };
