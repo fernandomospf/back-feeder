@@ -1,6 +1,7 @@
 const { sequelize } = require('.'); 
 const { Model, DataTypes } = require('sequelize');;
 const { UserModel } = require('./UserModel');
+const { StackModel } = require('./StackModel');
 
 class ProjectModel extends Model { }
 
@@ -11,6 +12,14 @@ ProjectModel.init(
       autoIncrement: true,
       primaryKey: true,
       allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: UserModel,
+        key: "id",
+      },
     },
     description: {
       type: DataTypes.STRING,
@@ -24,8 +33,8 @@ ProjectModel.init(
       type: DataTypes.BLOB,
       allowNull: false,
     },
-    stack: {
-      type: DataTypes.STRING,
+    stacks: {
+      type: DataTypes.NUMBER,
       allowNull: false,
     },
     module: {
@@ -45,8 +54,11 @@ ProjectModel.init(
   }
 );
 
-ProjectModel.belongsTo(UserModel, { foreignKey:'a', as:'projects' })
-UserModel.hasMany(ProjectModel, { foreignKey:'a', as:'projects' })
+UserModel.hasMany(ProjectModel, { foreignKey:'userId', as:'developer' });
+ProjectModel.belongsTo(UserModel, { foreignKey:'userId', as:'projects' });
+
+ProjectModel.belongsToMany(StackModel, { foreignKey:'projectId', as:'stacksProjects' });
+StackModel.belongsToMany(ProjectModel, { foreignKey:'stackId', as:'projectsStacks' });
 
 module.exports = {
   ProjectModel,
