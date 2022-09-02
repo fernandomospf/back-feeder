@@ -31,7 +31,11 @@ module.exports = {
       },
       difficult: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
+      },
+      stacks: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       userId: {
         type: Sequelize.INTEGER,
