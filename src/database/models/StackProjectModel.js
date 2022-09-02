@@ -33,8 +33,6 @@ StackProjectModel.init(
       underscored: true,
     }
   );
-  return stacks;
-};
 
 module.exports = {
   StackProjectModel,
