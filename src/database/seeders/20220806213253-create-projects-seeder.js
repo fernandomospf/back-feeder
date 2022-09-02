@@ -7,19 +7,17 @@ module.exports = {
         description: 'Projeto inovador',
         url: 'xablau',
         gif: 'gif',
-        stack: 'react',
         module: 'front-end',
         difficult: 'hard',
-        userId: 1
+        user_id: 1,
       },
       {
         description: 'Projeto pronto',
         url: 'xablau',
         gif: 'gif',
-        stack: 'react',
         module: 'back-end',
         difficult: 'easy',
-        userId: 2
+        user_id: 2,
       }
     ], {});
   },
