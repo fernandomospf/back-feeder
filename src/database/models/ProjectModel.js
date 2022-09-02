@@ -14,6 +14,10 @@ ProjectModel.init(
       primaryKey: true,
       allowNull: false,
     },
+    nameProject: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,

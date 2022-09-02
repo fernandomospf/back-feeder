@@ -8,6 +8,11 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      nameProject: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        field: 'name_project',
+      },
       description: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -44,3 +49,4 @@ module.exports = {
     await queryInterface.dropTable('projects');
   },
 };
+    
