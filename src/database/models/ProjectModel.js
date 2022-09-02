@@ -2,6 +2,7 @@ const { sequelize } = require('.');
 const { Model, DataTypes } = require('sequelize');;
 const { UserModel } = require('./UserModel');
 const { StackModel } = require('./StackModel');
+const { StackProjectModel } = require('./StackProjectModel');
 
 class ProjectModel extends Model { }
 
@@ -13,14 +14,6 @@ ProjectModel.init(
       primaryKey: true,
       allowNull: false,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: UserModel,
-        key: "id",
-      },
-    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,11 +24,7 @@ ProjectModel.init(
     },
     gif: {
       type: DataTypes.BLOB,
-      allowNull: false,
-    },
-    stacks: {
-      type: DataTypes.NUMBER,
-      allowNull: false,
+      allowNull: true,
     },
     module: {
       type: DataTypes.STRING,
@@ -44,6 +33,14 @@ ProjectModel.init(
     difficult: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: UserModel,
+        key: "id",
+      },
     },
   },
   {
@@ -55,10 +52,10 @@ ProjectModel.init(
 );
 
 UserModel.hasMany(ProjectModel, { foreignKey:'userId', as:'developer' });
-ProjectModel.belongsTo(UserModel, { foreignKey:'userId', as:'projects' });
+ProjectModel.belongsTo(UserModel, { foreignKey:'userId', as:'userProjects' });
 
-ProjectModel.belongsToMany(StackModel, { foreignKey:'projectId', as:'stacksProjects' });
-StackModel.belongsToMany(ProjectModel, { foreignKey:'stackId', as:'projectsStacks' });
+ProjectModel.belongsToMany(StackModel, { through: StackProjectModel, foreignKey:'projectId', as:'projects' });
+StackModel.belongsToMany(ProjectModel, { through: StackProjectModel, foreignKey:'stackId', as:'stacks' });
 
 module.exports = {
   ProjectModel,
