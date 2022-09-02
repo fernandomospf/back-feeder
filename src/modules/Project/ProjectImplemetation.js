@@ -1,18 +1,13 @@
 const { ProjectModel } = require('../../database/models/ProjectModel');
-const {
-  StackProjectModel,
-} = require('../../database/models/StackProjectModel');
 const { UserModel } = require('../../database/models/UserModel');
 
 class ProjectImplemetation {
   constructor(
     userModel = UserModel,
     projectModel = ProjectModel,
-    stackProjectModel = StackProjectModel
   ) {
     this.userModel = userModel;
     this.projectModel = projectModel;
-    this.stackProjectModel = stackProjectModel;
   }
 
   async findUserId(userInfo) {
@@ -26,23 +21,17 @@ class ProjectImplemetation {
   }
 
   async createNewProject(projectInfo) {
-    const { userId, description, url, stacks, module, difficult } = projectInfo;
+    const { userId, nameProject, description, url, stacks, module, difficult } = projectInfo;
 
     const createdProject = await this.projectModel.create({
+      nameProject,
       userId,
       description,
       url,
       module,
       difficult,
+      stacks,
     });
-
-    const { id: projectId } = createdProject;
-
-    Promise.all(
-      stacks.map(async ({ id }) => {
-        await this.stackProjectModel.create({ projectId, stackId: id });
-      })
-    );
 
     return createdProject;
   }
