@@ -10,6 +10,7 @@ module.exports = {
         gif: 'gif',
         module: 'front-end',
         difficult: 'hard',
+        stacks: ['JAVA'],
         user_id: 1,
       },
       {
@@ -18,6 +19,7 @@ module.exports = {
         url: 'xablau',
         gif: 'gif',
         module: 'back-end',
+        stacks: ['HTML'],
         difficult: 'easy',
         user_id: 2,
       }
