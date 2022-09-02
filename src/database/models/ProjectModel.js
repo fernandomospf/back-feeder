@@ -12,6 +12,10 @@ ProjectModel.init(
       primaryKey: true,
       allowNull: false,
     },
+    nameProject: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -22,11 +26,7 @@ ProjectModel.init(
     },
     gif: {
       type: DataTypes.BLOB,
-      allowNull: false,
-    },
-    stack: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     module: {
       type: DataTypes.STRING,
@@ -35,6 +35,18 @@ ProjectModel.init(
     difficult: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    stacks: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: true,
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: UserModel,
+        key: "id",
+      },
     },
   },
   {
@@ -45,8 +57,8 @@ ProjectModel.init(
   }
 );
 
-ProjectModel.belongsTo(UserModel, { foreignKey:'a', as:'projects' })
-UserModel.hasMany(ProjectModel, { foreignKey:'a', as:'projects' })
+UserModel.hasMany(ProjectModel, { foreignKey:'userId', as:'developer' });
+ProjectModel.belongsTo(UserModel, { foreignKey:'userId', as:'userProjects' });
 
 module.exports = {
   ProjectModel,

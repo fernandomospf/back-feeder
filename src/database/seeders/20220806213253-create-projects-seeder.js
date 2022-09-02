@@ -4,22 +4,24 @@ module.exports = {
   async up(queryInterface, _Sequelize) {
     await queryInterface.bulkInsert('projects', [
       {
+        name_project: 'Projeto Trybetunes',
         description: 'Projeto inovador',
         url: 'xablau',
         gif: 'gif',
-        stack: 'react',
         module: 'front-end',
         difficult: 'hard',
-        userId: 1
+        stacks: ['JAVA'],
+        user_id: 1,
       },
       {
+        name_project: 'Projeto trynfo',
         description: 'Projeto pronto',
         url: 'xablau',
         gif: 'gif',
-        stack: 'react',
         module: 'back-end',
+        stacks: ['HTML'],
         difficult: 'easy',
-        userId: 2
+        user_id: 2,
       }
     ], {});
   },
