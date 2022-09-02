@@ -79,15 +79,15 @@
     <ol>
         <li>
             <input type="checkbox" disabled />
-            <strong>firstName</strong>: <span>- Min 4 caracteres;</span><br>
+            <strong>firstName</strong>: <span>- Min 3 caracteres;</span><br>
         </li>
         <li>
             <input type="checkbox" disabled /> <strong>lastName</strong>: 
-            <span>- Min 4 caracteres;</span><br>
+            <span>- Min 3 caracteres;</span><br>
         </li>
         <li>
             <input type="checkbox" disabled /> <strong>username</strong>:
-             <span>- Min 4 caracteres;</span></br>
+             <span>- Min 3 caracteres;</span></br>
         </li>
         <li>
             <input type="checkbox" disabled /> <strong>email</strong>: 
