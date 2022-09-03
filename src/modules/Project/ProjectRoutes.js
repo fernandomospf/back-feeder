@@ -13,6 +13,8 @@ projectRoutes
     (req, res) => projectControler.createNewProject(req, res)
   );
 
+projectRoutes.get('/:id', (req, res) => projectControler.getAllUserProject(req, res))
+
 module.exports = {
   projectRoutes,
 }

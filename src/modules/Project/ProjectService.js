@@ -5,6 +5,11 @@ class ProjectService {
     this.projectImplemetation = projectImplemetation;
   }
 
+  async getAllUserProject(id) {
+    const allProjects = await this.projectImplemetation.getAllUserProject(id);
+    return allProjects;
+  }
+
   async createNewProject(userName, userInfo) {
     const findUser = await this.projectImplemetation.findUserId(userName)
 
